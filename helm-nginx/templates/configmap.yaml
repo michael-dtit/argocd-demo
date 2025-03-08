@@ -1,7 +1,7 @@
 apiVersion: v1
-data:
-  version: alpine
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
-  namespace: {{ .Values.namespace.name | quote }}
+  namespace: {{ quote .Values.namespace.name }}
+data:
+  {{ .Values.conf_data }}

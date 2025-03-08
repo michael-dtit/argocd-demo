@@ -34,3 +34,8 @@ resources:
   requests:
     cpu: 50m
     memory: 256Mi
+
+conf_data:
+  version: alpine
+  entry2: value2
+  entry3: value3
