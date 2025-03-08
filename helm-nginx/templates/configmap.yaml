@@ -4,4 +4,6 @@ metadata:
   name: {{ .Release.Name }}-configmap
   namespace: {{ quote .Values.namespace.name }}
 data:
-  {{ .Values.conf_data }}
+  {{- range $key, $value := .Values.conf_data }}
+  {{$key}}:{{$value}}
+  {{- end}}
