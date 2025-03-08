@@ -4,6 +4,4 @@ metadata:
   name: {{ .Release.Name }}-configmap
   namespace: {{ quote .Values.namespace.name }}
 data:
-  {{- range $key, $value := .Values.conf_data }}
-  {{$key}}: {{$value}}
-  {{- end}}
+{{ toYaml .Values.conf_data | indent 2 }}
